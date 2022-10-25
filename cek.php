@@ -1,17 +1,36 @@
 <?php
 
-if ( $_POST['username'] == 'admin' ) {
-    echo 'Username BENAR';
-    if ( $_POST['password'] == 'rahasia' ) {
-        echo 'Password BENAR';
-        echo 'BERHASIL LOGIN';
+/**
+ * cek apakah script diakses secara langsung
+ * file cek.php hanya boleh diakses dari login.php
+ */
+if ( isset( $_POST['username'] ) ) {
+
+    // mendefinisikan username dan password yang benar
+    $username = 'siswa';
+    $password = 'siswa';
+
+    /**
+     * INPUT User ID harus 'siswa'
+     * INPUT Password harus 'siswa'
+     */
+    if ( $_POST['username'] == $username ) {
+        echo 'username BENAR';
+        if ( $_POST['password'] == $password ) {
+            echo 'Password BENAR';
+        } else {
+            echo 'Password SALAH';
+        }
     } else {
-        echo 'Password SALAH';
-        echo 'COBA LAGI';
+        echo 'username SALAH';
     }
 } else {
-    echo 'Username SALAH';
+    echo 'HARUS LEWAT LOGIN!';
 }
+
+/**
+ * $_POST : untuk membaca kiriman data dari form menggunakan POST
+ */
 
 /**
  * TUGAS
