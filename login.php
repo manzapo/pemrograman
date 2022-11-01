@@ -1,4 +1,5 @@
 <?php
+$title = 'Halaman Login';
 include 'header.php';
 ?>
 
